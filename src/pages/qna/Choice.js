@@ -1,3 +1,10 @@
+import { PageTitle } from "../../components/PageTitle";
+
 export const Choice = () => {
-  return <div>Choice</div>;
+  return (
+    <>
+      <PageTitle titleName={"QnA"} />
+      <div>Choice</div>
+    </>
+  );
 };

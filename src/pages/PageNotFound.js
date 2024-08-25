@@ -1,3 +1,10 @@
+import { PageTitle } from "../components/PageTitle";
+
 export const PageNotFound = () => {
-  return <div>404</div>;
+  return (
+    <>
+      <PageTitle titleName={"없습니다!"} />
+      <div>404</div>
+    </>
+  );
 };
