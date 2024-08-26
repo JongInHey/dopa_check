@@ -11,21 +11,23 @@ export const Choice = () => {
   const [scores, setScores] = useState([]);
   const navi = useNavigate();
 
-  useEffect(() => {
-    const progress = (page / question.length) * 100;
-    setGauge(progress);
-  }, [page]);
-
   const handleAnswer = (score) => {
     setScores([...scores, score]);
     if (qIndex < question.length - 1) {
       setQIndex(qIndex + 1);
       setPage(page + 1);
-    } else {
-      navi("/result");
     }
   };
 
+  useEffect(() => {
+    const progress = (page / question.length) * 100;
+    setGauge(progress);
+    if (qIndex === question.length - 1 && scores.length === question.length) {
+      navi("/result", { state: { scores } });
+    }
+  }, [page, navi, qIndex, scores]);
+
+  console.log(scores);
   return (
     <>
       <PageTitle titleName={"QnA"} />
