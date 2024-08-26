@@ -1,4 +1,4 @@
-import { Box, Button, Container, Flex, Text } from "@chakra-ui/react";
+import { Box, Button, Container, Flex, Progress, Text } from "@chakra-ui/react";
 import { PageTitle } from "../../components/PageTitle";
 import { question } from "../../components/question";
 import { useEffect, useState } from "react";
@@ -46,7 +46,12 @@ export const Choice = () => {
           borderRadius="10px"
           overflow="hidden"
         >
-          <Box w={`${gauge}%`} h="100%" bgColor="#11e6d8"></Box>
+          <Progress
+            w={`${gauge}%`}
+            h="100%"
+            bgColor="#11e6d8"
+            transitionDuration="0.3s"
+          ></Progress>
         </Box>
         <Text float="right" mt={1}>
           {page}/{question.length}

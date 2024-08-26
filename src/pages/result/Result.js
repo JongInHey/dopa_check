@@ -1,6 +1,6 @@
-import { Container } from "@chakra-ui/react";
+import { Button, Container, Text } from "@chakra-ui/react";
 import { PageTitle } from "../../components/PageTitle";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { Loading } from "../../components/Loading";
 
@@ -25,7 +25,28 @@ export const Result = () => {
         m={"0 auto"}
         pos="relative"
       >
-        {isLoading ? <Loading /> : "결과 페이지"}
+        {isLoading ? (
+          <Loading />
+        ) : (
+          <>
+            <Text>결과 페이지</Text>
+            <Link to={"/"}>
+              <Button
+                w="80%"
+                bg="#11e6d8"
+                color="#fff"
+                boxShadow={"0 0 10px rgba(0,0,0,0.2)"}
+                _hover={{
+                  bg: "teal.300",
+                  transform: "scale(1.05)",
+                }}
+                _active={{ bg: "teal.400" }}
+              >
+                테스트 다시하기
+              </Button>
+            </Link>
+          </>
+        )}
       </Container>
     </>
   );
