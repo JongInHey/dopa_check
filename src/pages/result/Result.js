@@ -4,7 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { Loading } from "../../components/Loading";
 
-export const Result = () => {
+export const Result = ({ colorMode }) => {
   const [isLoading, setIsLoading] = useState(true);
   const { state } = useLocation();
   const { scores } = state;
@@ -24,6 +24,11 @@ export const Result = () => {
         p={"70px 20px 0 20px"}
         m={"0 auto"}
         pos="relative"
+        boxShadow={
+          colorMode === "light"
+            ? "0 0 15px rgba(0,0,0,0.1)"
+            : "0 0 15px rgba(255, 255, 255, 0.1)"
+        }
       >
         {isLoading ? (
           <Loading />
@@ -35,7 +40,11 @@ export const Result = () => {
                 w="80%"
                 bg="#11e6d8"
                 color="#fff"
-                boxShadow={"0 0 10px rgba(0,0,0,0.2)"}
+                boxShadow={
+                  colorMode === "light"
+                    ? "0 0 15px rgba(0,0,0,0.1)"
+                    : "0 0 15px rgba(255, 255, 255, 0.1)"
+                }
                 _hover={{
                   bg: "teal.300",
                   transform: "scale(1.05)",

@@ -4,7 +4,7 @@ import { question } from "../../components/question";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-export const Choice = () => {
+export const Choice = ({ colorMode }) => {
   const [page, setPage] = useState(1);
   const [gauge, setGauge] = useState();
   const [qIndex, setQIndex] = useState(0);
@@ -35,9 +35,14 @@ export const Choice = () => {
         maxW="450px"
         w="100%"
         h="100vh"
-        p={"70px 20px 0 20px"}
+        p={"100px 20px 0 20px"}
         m={"0 auto"}
         pos="relative"
+        boxShadow={
+          colorMode === "light"
+            ? "0 0 15px rgba(0,0,0,0.1)"
+            : "0 0 15px rgba(255, 255, 255, 0.1)"
+        }
       >
         <Box
           w="100%"
@@ -80,7 +85,11 @@ export const Choice = () => {
                   w="80%"
                   bg="#11e6d8"
                   color="#fff"
-                  boxShadow={"0 0 10px rgba(0,0,0,0.2)"}
+                  boxShadow={
+                    colorMode === "light"
+                      ? "0 0 15px rgba(0,0,0,0.1)"
+                      : "0 0 15px rgba(255, 255, 255, 0.1)"
+                  }
                   _hover={{
                     bg: "teal.300",
                     transform: "scale(1.05)",

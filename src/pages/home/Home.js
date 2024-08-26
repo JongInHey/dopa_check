@@ -2,7 +2,7 @@ import { Box, Button, Container, Heading, Img, Text } from "@chakra-ui/react";
 import { PageTitle } from "../../components/PageTitle";
 import { Link } from "react-router-dom";
 
-export const Home = () => {
+export const Home = ({ colorMode }) => {
   const imgUrl =
     "https://doda-static.com/img/900/80/1/1/1684215947210-4585449.jpg";
 
@@ -16,6 +16,11 @@ export const Home = () => {
         p={"70px 20px 0 20px"}
         m={"0 auto"}
         pos="relative"
+        boxShadow={
+          colorMode === "light"
+            ? "0 0 15px rgba(0,0,0,0.1)"
+            : "0 0 15px rgba(255, 255, 255, 0.1)"
+        }
       >
         <Box textAlign={"center"} mt={10}>
           <Heading fontSize="26px" fontWeight="700" color="#11e6d8">

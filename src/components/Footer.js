@@ -1,12 +1,12 @@
 import { Container, Flex, Text } from "@chakra-ui/react";
 
-export const Footer = () => {
+export const Footer = ({ colorMode }) => {
   return (
     <Container
       maxW={450}
       w={"100%"}
       h={"50px"}
-      bg="#c1c1c1"
+      bg={colorMode === "light" ? "#c1c1c1" : "#1d1d1d"}
       color={"#fff"}
       m="0 auto"
     >
