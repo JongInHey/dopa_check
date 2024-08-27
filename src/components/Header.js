@@ -16,8 +16,9 @@ export const Header = () => {
         left="50%"
         top="0"
         transform="translateX(-50%)"
-        backdropFilter="auto"
-        backdropBlur="20px"
+        bgColor="rgba(255, 255, 255, 0.2)"
+        filter="auto"
+        blur="20px"
       />
       <Container
         maxW="450px"
