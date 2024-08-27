@@ -79,11 +79,11 @@ export const question = [
       },
       {
         text: "자고 일어났더니 내가 원하는 곳으로\n순간이동을 할 수 있다고?!💡",
-        score: 1,
+        score: 3,
       },
       {
         text: "남몰래 넣어둔 주식이 엄청나게\n상승하여 통장에 10억🎊 생기기",
-        score: 6,
+        score: 7,
       },
     ],
   },
@@ -134,7 +134,7 @@ export const question = [
       },
       {
         text: '속으로 "헐 꿀잼인데??"하고 놀라며\n귀 기울여서 듣는다.',
-        score: 1,
+        score: 2,
       },
     ],
   },

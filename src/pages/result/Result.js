@@ -29,14 +29,16 @@ export const Result = ({ colorMode }) => {
   useEffect(() => {
     if (totalScore < 30) {
       setResultIndex(0);
-    } else if (totalScore > 30 && totalScore < 60) {
+    } else if (totalScore > 30 && totalScore <= 60) {
       setResultIndex(1);
-    } else if (totalScore > 60 && totalScore < 90) {
+    } else if (totalScore > 60 && totalScore <= 90) {
       setResultIndex(2);
-    } else if (totalScore > 90 && totalScore < 115) {
+    } else if (totalScore > 90 && totalScore <= 115) {
       setResultIndex(3);
     }
   }, [totalScore]);
+
+  console.log(totalScore);
 
   return (
     <>
