@@ -1,5 +1,6 @@
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 import { Box, Container, Text, useColorMode } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -30,9 +31,11 @@ export const Header = () => {
         justifyContent="center"
         centerContent
       >
-        <Text fontSize="20px" fontWeight="700" color={isDark}>
-          DOPA CHECK
-        </Text>
+        <Link to={"/"}>
+          <Text fontSize="20px" fontWeight="700" color={isDark}>
+            DOPA CHECK
+          </Text>
+        </Link>
         <Box
           onClick={toggleColorMode}
           borderRadius="30px 30px 30px 0"

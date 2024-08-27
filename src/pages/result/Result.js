@@ -39,6 +39,10 @@ export const Result = ({ colorMode }) => {
               <Button
                 w="80%"
                 bg="#11e6d8"
+                pos="absolute"
+                left="50%"
+                bottom="5%"
+                transform="translateX(-50%)"
                 color="#fff"
                 boxShadow={
                   colorMode === "light"
@@ -47,7 +51,7 @@ export const Result = ({ colorMode }) => {
                 }
                 _hover={{
                   bg: "teal.300",
-                  transform: "scale(1.05)",
+                  transform: "translateX(-50%) scale(1.05)",
                 }}
                 _active={{ bg: "teal.400" }}
               >

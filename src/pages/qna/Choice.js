@@ -63,17 +63,20 @@ export const Choice = ({ colorMode }) => {
         </Text>
 
         <Flex
-          mt="50%"
+          mt="45%"
           justifyContent="center"
           flexDirection="column"
           alignItems="center"
         >
-          <Box>
-            <Text>{question[qIndex].q}</Text>
+          <Box textAlign={"center"}>
+            <Text fontSize={"20px"} fontWeight="700" wordBreak="keep-all">
+              {question[qIndex].q}
+            </Text>
           </Box>
-          <Box w={"100%"} mt={10}>
+          <Box w={"95%"} mt={10}>
             {question[qIndex].a.map((answer, index) => (
               <Flex
+                w={"100%"}
                 justifyContent="center"
                 flexDirection="column"
                 alignItems="center"
@@ -82,9 +85,12 @@ export const Choice = ({ colorMode }) => {
                 <Button
                   onClick={() => handleAnswer(answer.score)}
                   mt={7}
-                  w="80%"
+                  w="100%"
+                  h={"60px"}
                   bg="#11e6d8"
                   color="#fff"
+                  whiteSpace={"pre-wrap"}
+                  wordBreak={"keep-all"}
                   boxShadow={
                     colorMode === "light"
                       ? "0 0 15px rgba(0,0,0,0.1)"

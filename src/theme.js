@@ -1,4 +1,4 @@
-import { extendBaseTheme, theme as chakraTheme } from "@chakra-ui/react";
+import { theme as chakraTheme, extendTheme } from "@chakra-ui/react";
 import { mode } from "@chakra-ui/theme-tools";
 
 const config = {
@@ -27,7 +27,7 @@ const components = {
   Modal,
 };
 
-const theme = extendBaseTheme({
+const theme = extendTheme({
   styles,
   components,
   config,

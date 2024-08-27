@@ -39,12 +39,12 @@ export const Home = ({ colorMode }) => {
             objectFit="cover"
             pos="absolute"
             left="0"
-            bottom="30%"
+            bottom="25%"
             boxShadow={"0 0 10px rgba(0,0,0,0.1)"}
           />
         </Box>
 
-        <Link to="qna">
+        <Link to={"/qna"}>
           <Button
             w="80%"
             bg="#11e6d8"
@@ -53,7 +53,11 @@ export const Home = ({ colorMode }) => {
             bottom="10%"
             transform="translateX(-50%)"
             color="#fff"
-            boxShadow={"0 0 10px rgba(0,0,0,0.2)"}
+            boxShadow={
+              colorMode === "light"
+                ? "0 0 10px rgba(0,0,0,0.2)"
+                : "0 0 10px rgba(255, 255, 255, 0.2)"
+            }
             _hover={{
               bg: "teal.300",
               transform: "translateX(-50%) scale(1.05)",
