@@ -27,7 +27,6 @@ export const Choice = ({ colorMode }) => {
     }
   }, [page, navi, qIndex, scores]);
 
-  console.log(scores);
   return (
     <>
       <PageTitle titleName={"QnA"} />
