@@ -9,13 +9,14 @@ import {
 } from "@chakra-ui/react";
 import { PageTitle } from "../../components/PageTitle";
 import { Link, useLocation } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Loading } from "../../components/Loading";
 import { ResultName } from "../../components/ResultName";
 import { RepeatIcon } from "@chakra-ui/icons";
 
 export const Result = ({ colorMode }) => {
   const [isLoading, setIsLoading] = useState(true);
+  const [resultIndex, setResultIndex] = useState(0);
   const { state } = useLocation();
   const { scores } = state;
 
@@ -23,13 +24,20 @@ export const Result = ({ colorMode }) => {
     setIsLoading(false);
   }, 2000);
 
-  const totalScore = () => {
-    const total = scores.reduce((acc, curr) => acc + curr, 0);
-    console.log(total);
-  };
-  console.log(scores);
-  totalScore();
-  console.log(ResultName[0]);
+  const totalScore = scores.reduce((acc, curr) => acc + curr, 0);
+
+  useEffect(() => {
+    if (totalScore < 30) {
+      setResultIndex(0);
+    } else if (totalScore > 30 && totalScore < 60) {
+      setResultIndex(1);
+    } else if (totalScore > 60 && totalScore < 90) {
+      setResultIndex(2);
+    } else if (totalScore > 90 && totalScore < 115) {
+      setResultIndex(3);
+    }
+  }, [totalScore]);
+
   return (
     <>
       <PageTitle titleName={"Result"} />
@@ -65,10 +73,10 @@ export const Result = ({ colorMode }) => {
               내 혈중 도파민의 농도는 • • •
             </Text>
             <Image
-              src={process.env.PUBLIC_URL + ResultName[0].img}
-              alt={ResultName[0].title}
+              src={process.env.PUBLIC_URL + ResultName[resultIndex].img}
+              alt={ResultName[resultIndex].title}
               w={"200px"}
-              m={"0 auto"}
+              m={"20px auto"}
             />
             <Box
               maxW="450px"
@@ -85,21 +93,22 @@ export const Result = ({ colorMode }) => {
                 textAlign={"center"}
                 whiteSpace={"pre-wrap"}
               >
-                {ResultName[0].title}
+                {ResultName[resultIndex].title}
               </Text>
               <UnorderedList
                 mt={8}
                 marginInlineStart={7}
                 listStyleType="disclosure-closed"
               >
-                {ResultName[0].desc.map((list) => (
+                {ResultName[resultIndex].desc.map((list, index) => (
                   <ListItem
                     mb={4}
                     lineHeight={1.6}
                     fontWeight="500"
                     opacity={"0.7"}
+                    key={index}
                   >
-                    {list.text}
+                    <Text>{list.text}</Text>
                   </ListItem>
                 ))}
               </UnorderedList>
