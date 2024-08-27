@@ -83,7 +83,11 @@ export const Result = ({ colorMode }) => {
               w="100%"
               p={"20px 10px"}
               bgColor={colorMode === "light" ? "" : "rgba(0, 0, 0, 0.2)"}
-              boxShadow="0px 5px 15px 0px rgba(13, 190, 175, 0.19)"
+              boxShadow={
+                colorMode === "light"
+                  ? "0px 5px 15px 0px rgba(0, 0, 0, 0.2)"
+                  : "0px 5px 15px 0px rgba(13, 190, 175, 0.2)"
+              }
               borderRadius={"20px"}
               wordBreak={"keep-all"}
             >
