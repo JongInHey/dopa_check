@@ -12,6 +12,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { Loading } from "../../components/Loading";
 import { ResultName } from "../../components/ResultName";
+import { RepeatIcon } from "@chakra-ui/icons";
 
 export const Result = ({ colorMode }) => {
   const [isLoading, setIsLoading] = useState(true);
@@ -78,7 +79,12 @@ export const Result = ({ colorMode }) => {
               borderRadius={"20px"}
               wordBreak={"keep-all"}
             >
-              <Text fontSize="22px" fontWeight="700" textAlign={"center"}>
+              <Text
+                fontSize="22px"
+                fontWeight="700"
+                textAlign={"center"}
+                whiteSpace={"pre-wrap"}
+              >
                 {ResultName[0].title}
               </Text>
               <UnorderedList
@@ -117,6 +123,7 @@ export const Result = ({ colorMode }) => {
                 }}
                 _active={{ bg: "teal.400" }}
               >
+                <RepeatIcon mr={2} fontSize={"20px"} />
                 테스트 다시하기
               </Button>
             </Link>

@@ -1,6 +1,6 @@
 export const ResultName = [
   {
-    title: "-50% 매 순간 디톡스 중인 도파민 청정구역",
+    title: "-50%\n매 순간 디톡스 중인\n도파민 청정구역",
     img: `/img/cleanDopa.png`,
     desc: [
       {
