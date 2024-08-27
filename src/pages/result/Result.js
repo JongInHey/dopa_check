@@ -13,6 +13,9 @@ export const Result = ({ colorMode }) => {
     setIsLoading(false);
   }, 2000);
 
+  const totalScore = () => {
+    const data = scores.reduce((acc, curr) => acc + curr, 0);
+  };
   console.log(scores);
   return (
     <>

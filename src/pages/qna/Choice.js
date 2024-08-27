@@ -63,7 +63,7 @@ export const Choice = ({ colorMode }) => {
         </Text>
 
         <Flex
-          mt="45%"
+          mt="40%"
           justifyContent="center"
           flexDirection="column"
           alignItems="center"
@@ -91,6 +91,7 @@ export const Choice = ({ colorMode }) => {
                   color="#fff"
                   whiteSpace={"pre-wrap"}
                   wordBreak={"keep-all"}
+                  lineHeight="24px"
                   boxShadow={
                     colorMode === "light"
                       ? "0 0 15px rgba(0,0,0,0.1)"
