@@ -99,7 +99,7 @@ export const Choice = ({ colorMode }) => {
                   _hover={{
                     bg: "#11e6d8",
                   }}
-                  _active={{ bg: "teal.400" }}
+                  _active={{ bg: "teal.400", transform: "scale(1.05)" }}
                 >
                   {answer.text}
                 </Button>
