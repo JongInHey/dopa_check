@@ -97,8 +97,7 @@ export const Choice = ({ colorMode }) => {
                       : "0 0 15px rgba(255, 255, 255, 0.1)"
                   }
                   _hover={{
-                    bg: "teal.300",
-                    transform: "scale(1.05)",
+                    bg: "#11e6d8",
                   }}
                   _active={{ bg: "teal.400" }}
                 >
