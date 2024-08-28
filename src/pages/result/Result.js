@@ -41,6 +41,10 @@ export const Result = ({ colorMode }) => {
     }
   }, [totalScore]);
 
+  const onSelectIndex = (index) => {
+    setResultIndex(index);
+  };
+
   return (
     <>
       <PageTitle titleName={"Result"} />
@@ -121,7 +125,7 @@ export const Result = ({ colorMode }) => {
               </UnorderedList>
             </Box>
 
-            <AllResult colorMode={colorMode} />
+            <AllResult colorMode={colorMode} onSelectIndex={onSelectIndex} />
             <Link to={"/"}>
               <Button
                 w="80%"

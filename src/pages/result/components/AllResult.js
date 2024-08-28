@@ -15,8 +15,18 @@ import {
 } from "@chakra-ui/react";
 import { ResultName } from "../../../components/ResultName";
 
-export const AllResult = ({ colorMode }) => {
+export const AllResult = ({ colorMode, onSelectIndex }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const handleImage = (index) => {
+    onSelectIndex(index);
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+    onClose();
+  };
 
   return (
     <>
@@ -54,7 +64,7 @@ export const AllResult = ({ colorMode }) => {
               justifyItems="center"
             >
               {ResultName.map((data, index) => (
-                <GridItem key={index}>
+                <GridItem key={index} onClick={() => handleImage(index)}>
                   <Image
                     borderRadius="full"
                     boxSize="100px"
@@ -62,6 +72,7 @@ export const AllResult = ({ colorMode }) => {
                     src={process.env.PUBLIC_URL + data.img}
                     alt={data.alt}
                     m="0 auto"
+                    cursor={"pointer"}
                   />
                   <Text
                     fontWeight="700"
