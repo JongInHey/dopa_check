@@ -3,8 +3,10 @@ import { PageTitle } from "../../components/PageTitle";
 import { question } from "../../components/question";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useScrollTop } from "../../lib/useScrollTop";
 
 export const Choice = ({ colorMode }) => {
+  useScrollTop();
   const [page, setPage] = useState(1);
   const [gauge, setGauge] = useState();
   const [qIndex, setQIndex] = useState(0);

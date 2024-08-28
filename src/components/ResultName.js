@@ -1,6 +1,7 @@
 export const ResultName = [
   {
     title: "-50%\n매 순간 디톡스 중인\n도파민 청정구역",
+    alt: "-50%\n도파민 청정구역",
     img: `/img/cleanDopa.png`,
     desc: [
       {
@@ -22,6 +23,7 @@ export const ResultName = [
   },
   {
     title: "15%\n인생이 슬슬 싱거워진\n도파민 쾌락 꿈나무",
+    alt: "15%\n도파민 쾌락 꿈나무",
     img: `/img/beginDopa.png`,
     desc: [
       {
@@ -43,6 +45,7 @@ export const ResultName = [
   },
   {
     title: "60%\n자극의 참맛을 알아버린\n나의 뇌는 잠재적 중독 상태",
+    alt: "60%\n도파민 잠재적 중독",
     img: `/img/dangerDopa.png`,
     desc: [
       {
@@ -62,7 +65,8 @@ export const ResultName = [
   {
     title:
       "99.999%\n고자극 + 쾌락을 찾아 폭발하는\n나의 뇌는 인간 도파민 그 잡채",
-    img: `/img/dangerDopa.png`,
+    alt: "99.999%\n인간 도파민 그 잡채",
+    img: `/img/burnDopa.png`,
     desc: [
       {
         text: "평소에 스마트폰이나 자극적인 요소에 많이 노출 되어버린 당신의 뇌!",

@@ -1,8 +1,11 @@
 import { Box, Button, Container, Heading, Img, Text } from "@chakra-ui/react";
 import { PageTitle } from "../../components/PageTitle";
 import { Link } from "react-router-dom";
+import { useScrollTop } from "../../lib/useScrollTop";
 
 export const Home = ({ colorMode }) => {
+  useScrollTop();
+
   const imgUrl =
     "https://doda-static.com/img/900/80/1/1/1684215947210-4585449.jpg";
 

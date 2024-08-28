@@ -13,18 +13,21 @@ import { useEffect, useState } from "react";
 import { Loading } from "../../components/Loading";
 import { ResultName } from "../../components/ResultName";
 import { RepeatIcon } from "@chakra-ui/icons";
+import { useScrollTop } from "../../lib/useScrollTop";
+import { AllResult } from "./components/AllResult";
 
 export const Result = ({ colorMode }) => {
+  useScrollTop();
   const [isLoading, setIsLoading] = useState(true);
   const [resultIndex, setResultIndex] = useState(0);
   const { state } = useLocation();
   const { scores } = state;
 
+  const totalScore = scores.reduce((acc, curr) => acc + curr, 0);
+
   setTimeout(() => {
     setIsLoading(false);
   }, 2000);
-
-  const totalScore = scores.reduce((acc, curr) => acc + curr, 0);
 
   useEffect(() => {
     if (totalScore < 30) {
@@ -76,7 +79,7 @@ export const Result = ({ colorMode }) => {
             </Text>
             <Image
               src={process.env.PUBLIC_URL + ResultName[resultIndex].img}
-              alt={ResultName[resultIndex].title}
+              alt={ResultName[resultIndex].alt}
               w={"200px"}
               m={"20px auto"}
             />
@@ -119,13 +122,15 @@ export const Result = ({ colorMode }) => {
                 ))}
               </UnorderedList>
             </Box>
+
+            <AllResult colorMode={colorMode} />
             <Link to={"/"}>
               <Button
                 w="80%"
                 bg="#11e6d8"
                 left="50%"
                 transform="translateX(-50%)"
-                mt={20}
+                mt={7}
                 color="#fff"
                 boxShadow={
                   colorMode === "light"
