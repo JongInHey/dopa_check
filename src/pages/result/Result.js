@@ -41,8 +41,6 @@ export const Result = ({ colorMode }) => {
     }
   }, [totalScore]);
 
-  console.log(totalScore);
-
   return (
     <>
       <PageTitle titleName={"Result"} />

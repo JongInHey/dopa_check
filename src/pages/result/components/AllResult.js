@@ -53,8 +53,8 @@ export const AllResult = ({ colorMode }) => {
               gap={4}
               justifyItems="center"
             >
-              {ResultName.map((data) => (
-                <GridItem>
+              {ResultName.map((data, index) => (
+                <GridItem key={index}>
                   <Image
                     borderRadius="full"
                     boxSize="100px"
@@ -67,6 +67,7 @@ export const AllResult = ({ colorMode }) => {
                     fontWeight="700"
                     whiteSpace={"pre-wrap"}
                     textAlign="center"
+                    mt={2}
                   >
                     {data.alt}
                   </Text>
