@@ -46,7 +46,7 @@ export const Result = ({ colorMode }) => {
       <Container
         maxW="450px"
         w="100%"
-        h={isLoading ? "100vh" : ""}
+        h={isLoading ? "100vh" : "100%"}
         p={"70px 20px"}
         m={"0 auto"}
         pos="relative"
