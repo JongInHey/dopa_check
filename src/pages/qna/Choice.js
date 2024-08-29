@@ -51,6 +51,7 @@ export const Choice = ({ colorMode }) => {
           bgColor="#fff"
           borderRadius="10px"
           overflow="hidden"
+          mt={7}
         >
           <Progress
             w={`${gauge}%`}
