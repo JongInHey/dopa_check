@@ -17,7 +17,7 @@ function App() {
         <Route path="/" element={<Home colorMode={colorMode} />} />
         <Route path="/qna" element={<Choice colorMode={colorMode} />} />
         <Route path="/result" element={<Result colorMode={colorMode} />} />
-        <Route path="/*" element={<PageNotFound />} />
+        <Route path="/*" element={<PageNotFound colorMode={colorMode} />} />
       </Routes>
       <Footer colorMode={colorMode} />
     </HashRouter>
