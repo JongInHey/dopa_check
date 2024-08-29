@@ -1,11 +1,27 @@
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 import { Box, Container, Text, useColorMode } from "@chakra-ui/react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 export const Header = () => {
   const { colorMode, toggleColorMode } = useColorMode();
+  const [scrollY, setScrollY] = useState(0);
   const isDark = colorMode === "light" ? "#444" : "white";
 
+  const handleY = () => {
+    const pageY = window.scrollY;
+    setScrollY(pageY);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleY);
+
+    return () => {
+      window.removeEventListener("scroll", handleY);
+    };
+  }, []);
+
+  console.log(scrollY);
   return (
     <>
       <Box
@@ -26,7 +42,8 @@ export const Header = () => {
         h="50px"
         pos="fixed"
         left="50%"
-        top="0"
+        top={scrollY > 50 ? "-100px" : "0"}
+        transitionDuration="0.2s"
         zIndex={99}
         transform="translateX(-50%)"
         justifyContent="center"
