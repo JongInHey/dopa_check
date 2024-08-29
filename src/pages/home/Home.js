@@ -25,8 +25,8 @@ export const Home = ({ colorMode }) => {
             : "0 0 15px rgba(255, 255, 255, 0.1)"
         }
       >
-        <Box textAlign={"center"} mt={10}>
-          <Heading fontSize="26px" fontWeight="700" color="#11e6d8">
+        <Box textAlign={"center"} mt={14}>
+          <Heading fontSize="30px" fontWeight="700" color="#11e6d8">
             도파민 중독 테스트
           </Heading>
           <Text fontSize="18px" fontWeight="400" mt={6}>
@@ -36,13 +36,15 @@ export const Home = ({ colorMode }) => {
         </Box>
         <Box>
           <Img
+            w={"95%"}
             src={imgUrl}
             alt="도파민 중독?"
             borderRadius="20px"
             objectFit="cover"
             pos="absolute"
-            left="0"
-            bottom="25%"
+            left="50%"
+            transform="translateX(-50%)"
+            bottom="26%"
             boxShadow={"0 0 10px rgba(0,0,0,0.1)"}
           />
         </Box>
@@ -53,7 +55,7 @@ export const Home = ({ colorMode }) => {
             bg="#11e6d8"
             pos="absolute"
             left="50%"
-            bottom="10%"
+            bottom="13%"
             transform="translateX(-50%)"
             color="#fff"
             boxShadow={
