@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/dopa_check/static/js/main.82d56fa0.js",
+    "main.js": "/dopa_check/static/js/main.df3183b4.js",
     "index.html": "/dopa_check/index.html",
-    "main.82d56fa0.js.map": "/dopa_check/static/js/main.82d56fa0.js.map"
+    "main.df3183b4.js.map": "/dopa_check/static/js/main.df3183b4.js.map"
   },
   "entrypoints": [
-    "static/js/main.82d56fa0.js"
+    "static/js/main.df3183b4.js"
   ]
 }
