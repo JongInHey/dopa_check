@@ -21,7 +21,6 @@ export const Header = () => {
     };
   }, []);
 
-  console.log(scrollY);
   return (
     <>
       <Box
